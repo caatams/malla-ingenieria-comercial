@@ -150,3 +150,102 @@ function renderMalla() {
 }
 
 renderMalla();
+#malla-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 10px;
+  min-width: 1200px;
+  overflow-x: auto;
+}
+
+.semestre {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 200px;
+  flex-shrink: 0;
+}
+
+.semestre h2 {
+  background-color: #f8bbd0;
+  padding: 8px;
+  text-align: center;
+  border-radius: 8px;
+  color: #880e4f;
+}
+
+.ramo {
+  padding: 10px;
+  background-color: #fce4ec;
+  border: 2px solid #f8bbd0;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  user-select: none;
+  font-size: 0.9rem;
+}
+
+.ramo:hover {
+  background-color: #f8bbd0;
+  transform: scale(1.03);
+}
+
+.ramo.aprobado {
+  background-color: #f48fb1 !important;
+  color: white;
+  font-weight: bold;
+  border-color: #c2185b;
+}
+
+.ramo.bloqueado {
+  background-color: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+  border-style: dashed;
+}
+
+/* Tipos de formación */
+.ramo.basica { border-left: 5px solid #f48fb1; }
+.ramo.profesional { border-left: 5px solid #f06292; }
+.ramo.formacion { border-left: 5px solid #ce93d8; }
+.ramo.optativa { border-left: 5px solid #ba68c8; }
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 20px;
+  background-color: #fff0f5;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #880e4f;
+}
+
+#info-detalle {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border: 2px solid #c2185b;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 350px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  display: none;
+  z-index: 1000;
+}
+
+#info-detalle button {
+  float: right;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #c2185b;
+}
