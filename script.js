@@ -1,18 +1,18 @@
 #malla-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: auto;
+  grid-auto-columns: 220px;
   gap: 20px;
   padding: 10px;
-  min-width: 1200px;
   overflow-x: auto;
+  min-height: 100vh;
 }
 
 .semestre {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  min-width: 240px;
-  flex-shrink: 0;
   background-color: #fdecef;
   padding: 10px;
   border-radius: 10px;
@@ -39,6 +39,9 @@
   user-select: none;
   font-size: 0.8rem;
   line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .ramo:hover {
@@ -61,9 +64,9 @@
 }
 
 .ramo .detalle {
-  font-size: 0.75rem;
-  margin-top: 4px;
+  font-size: 0.7rem;
   color: #444;
+  margin-top: 2px;
 }
 
 /* Tipos de formación */
