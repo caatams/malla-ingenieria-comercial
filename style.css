@@ -1,53 +1,22 @@
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 20px;
-  background-color: #fff0f5;
-  color: #333;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #880e4f;
-}
-
-#info-detalle {
-  position: fixed;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: white;
-  border: 2px solid #c2185b;
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 350px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  display: none;
-  z-index: 1000;
-}
-
-#info-detalle button {
-  float: right;
-  background: transparent;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: #c2185b;
-}
-
 #malla-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: auto;
+  grid-auto-columns: 220px;
   gap: 20px;
   padding: 10px;
-  min-width: 1200px;
+  overflow-x: auto;
+  min-height: 100vh;
 }
 
 .semestre {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  min-width: 200px;
+  background-color: #fdecef;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
 .semestre h2 {
@@ -56,6 +25,7 @@ h1 {
   text-align: center;
   border-radius: 8px;
   color: #880e4f;
+  font-size: 1rem;
 }
 
 .ramo {
@@ -64,11 +34,14 @@ h1 {
   border: 2px solid #f8bbd0;
   border-radius: 12px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  text-align: center;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
   user-select: none;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .ramo:hover {
@@ -90,8 +63,27 @@ h1 {
   border-style: dashed;
 }
 
+.ramo .detalle {
+  font-size: 0.7rem;
+  color: #444;
+  margin-top: 2px;
+}
+
 /* Tipos de formación */
 .ramo.basica { border-left: 5px solid #f48fb1; }
 .ramo.profesional { border-left: 5px solid #f06292; }
 .ramo.formacion { border-left: 5px solid #ce93d8; }
 .ramo.optativa { border-left: 5px solid #ba68c8; }
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 20px;
+  background-color: #fff0f5;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #880e4f;
+}
