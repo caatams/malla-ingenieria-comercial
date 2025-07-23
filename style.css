@@ -1,91 +1,97 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 20px;
-  background-color: #f9f9f9;
-  color: #222;
+  background-color: #fff0f5;
+  color: #333;
 }
 
 h1 {
   text-align: center;
   margin-bottom: 30px;
+  color: #880e4f;
 }
 
-#malla-container {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 10px;
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
-.semestre {
-  background-color: #f6d1e8;  /* rosa claro */
-  padding: 8px;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 6px;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-  grid-column: span 10;
-}
-
-.ramo {
-  background-color: #fce4ec;  /* rosa muy claro */
-  padding: 10px 8px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  border: 2px solid transparent;
-  transition: border-color 0.2s ease;
-  min-height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  user-select: none;
-}
-
-.ramo:hover {
-  border-color: #d81b60; /* rosa oscuro al pasar */
-}
-
-/* Colores según tipo de formación en tonos rosa */
-.basica {
-  background-color: #f8bbd0; /* rosa claro */
-}
-
-.profesional {
-  background-color: #f48fb1; /* rosa medio */
-}
-
-.formacion {
-  background-color: #f06292; /* rosa fuerte */
-}
-
-.optativa {
-  background-color: #ec407a; /* rosa intenso */
-}
-
-.info-detalle {
+#info-detalle {
   position: fixed;
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
   background-color: white;
-  border: 2px solid #d81b60;
-  border-radius: 8px;
+  border: 2px solid #c2185b;
+  border-radius: 10px;
   padding: 20px;
-  max-width: 320px;
-  box-shadow: 2px 2px 15px rgba(216, 27, 96, 0.5);
+  max-width: 350px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
   display: none;
   z-index: 1000;
 }
 
-.info-detalle button {
+#info-detalle button {
   float: right;
   background: transparent;
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
-  color: #d81b60;
-  margin-bottom: 10px;
+  color: #c2185b;
 }
+
+#malla-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 10px;
+  min-width: 1200px;
+}
+
+.semestre {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 200px;
+}
+
+.semestre h2 {
+  background-color: #f8bbd0;
+  padding: 8px;
+  text-align: center;
+  border-radius: 8px;
+  color: #880e4f;
+}
+
+.ramo {
+  padding: 10px;
+  background-color: #fce4ec;
+  border: 2px solid #f8bbd0;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  user-select: none;
+  font-size: 0.9rem;
+}
+
+.ramo:hover {
+  background-color: #f8bbd0;
+  transform: scale(1.03);
+}
+
+.ramo.aprobado {
+  background-color: #f48fb1 !important;
+  color: white;
+  font-weight: bold;
+  border-color: #c2185b;
+}
+
+.ramo.bloqueado {
+  background-color: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+  border-style: dashed;
+}
+
+/* Tipos de formación */
+.ramo.basica { border-left: 5px solid #f48fb1; }
+.ramo.profesional { border-left: 5px solid #f06292; }
+.ramo.formacion { border-left: 5px solid #ce93d8; }
+.ramo.optativa { border-left: 5px solid #ba68c8; }
