@@ -11,8 +11,12 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  min-width: 200px;
+  min-width: 240px;
   flex-shrink: 0;
+  background-color: #fdecef;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
 .semestre h2 {
@@ -21,6 +25,7 @@
   text-align: center;
   border-radius: 8px;
   color: #880e4f;
+  font-size: 1rem;
 }
 
 .ramo {
@@ -29,11 +34,11 @@
   border: 2px solid #f8bbd0;
   border-radius: 12px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  text-align: center;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
   user-select: none;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  line-height: 1.2;
 }
 
 .ramo:hover {
@@ -53,6 +58,12 @@
   color: #999;
   cursor: not-allowed;
   border-style: dashed;
+}
+
+.ramo .detalle {
+  font-size: 0.75rem;
+  margin-top: 4px;
+  color: #444;
 }
 
 /* Tipos de formación */
